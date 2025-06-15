@@ -1,0 +1,184 @@
+/* Existing CSS (keep as is unless specified) */
+
+.counterr {
+  position: relative;
+  font-size: 1rem !important;
+  font-weight: 800;
+}
+
+.hidee {
+  display: none !important;
+}
+
+.button-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn_loader {
+  display: none;
+}
+
+div.spinner {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  background: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: -2px;
+}
+
+button:disabled {
+  background-color: grey !important;
+  color: white !important;
+}
+
+div.spinner div {
+  width: 6%;
+  height: 16%;
+  background: black;
+  position: absolute;
+  left: 49%;
+  top: 43%;
+  opacity: 0;
+  -webkit-border-radius: 50px;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-animation: fade 1s linear infinite;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.25;
+  }
+}
+
+.infoo {
+  color: navy;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.infoo_mail {
+  color: red;
+  font-size: 1.3rem;
+}
+
+
+/* --- Spinner and Counter Positioning Fix --- */
+.delayy {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  flex-direction: column; /* Stack spinner and text vertically */
+  margin-top: 20px; /* Add some space above */
+}
+
+.spinner_container {
+  position: relative; /* Crucial for absolute positioning of children */
+  width: 50px; /* Define the size of the spinner container */
+  height: 50px;
+  display: flex; /* Use flex to easily center content */
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  position: absolute; /* Position the spinner absolutely within its container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make it fill the container */
+  height: 100%; /* Make it fill the container */
+  border: 4px solid rgb(37, 106, 201); /* Thicker border for better visibility */
+  border-radius: 50%;
+  border-top-color: transparent; /* Make top border transparent for spinning effect */
+  display: inline-block;
+  animation: loadingspinner .7s linear infinite;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.counterr {
+  position: relative; /* Keep it relative to be affected by flexbox */
+  z-index: 1; /* Ensure it's above the spinner */
+  font-size: 1.2rem; /* Adjusted font size for better fit */
+  font-weight: 900;
+  color: #333; /* Darker color for readability */
+}
+
+@keyframes loadingspinner {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+/* --- Modal Styles --- */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  backdrop-filter: blur(5px); /* Optional: blur background */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* Removed auto margin for flex centering */
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%; /* Could be responsive */
+  max-width: 400px; /* Max width */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative; /* For close button positioning */
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #4CAF50; /* Green for success */
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1.1em;
+  color: #555;
+}

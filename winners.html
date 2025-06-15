@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <title>Our Winners | Facebook Users Rewards | Lottery Office</title>
+    <meta name="description" content="Meet the lucky winners who have matched international lottery tickets with The Lottery Office. Your success story could be next!">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Winners | The Lottery Office">
+    <meta property="og:url" content="https://www.lotteryoffice.com.au/winners/">
+    <meta property="og:description" content="Meet the lucky winners who have matched international lottery tickets with The Lottery Office. Your success story could be next!">
+    <meta property="og:image" content="https://www.lotteryoffice.com.au/assets/images/meta/tlo-meta.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"></noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+
+    <style>
+        :root {
+            --primary-dark-blue: #0b1f3a;
+            --secondary-blue: #2c68a5;
+            --accent-red: #e52825;
+            --accent-orange: #f47b2a;
+            --button-green: #3bb76f;
+            --button-green-hover: #2fa663;
+            --text-light: #f0f8ff;
+            --text-dark: #333;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-height: 70px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bg-avatar.png') no-repeat center center fixed; /* New background for winners page */
+            background-size: cover;
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%);
+            z-index: -1;
+        }
+
+        /* Header (Same as previous design) */
+        header {
+            background-color: var(--primary-dark-blue);
+            color: var(--text-light);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            height: var(--header-height);
+            z-index: 1000;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 35px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a,
+        nav ul li span {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a:hover,
+        nav ul li span:hover {
+            color: var(--accent-orange);
+        }
+
+        nav ul li i {
+            margin-right: 8px;
+        }
+
+        .cart-count {
+            background-color: var(--accent-red);
+            color: var(--text-light);
+            font-size: 0.8em;
+            border-radius: 50%;
+            padding: 3px 7px;
+            margin-left: 5px;
+            position: relative;
+            top: -5px;
+            left: -5px;
+        }
+
+        /* Hero Section for Winners Page */
+        .winners-hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--text-light);
+            min-height: 350px; /* Ensure a decent height */
+        }
+
+        .winners-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            animation: slideInDown 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .winners-hero p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.5s;
+        }
+
+        /* Winners List Section */
+        .winners-list-section {
+            background-color: var(--card-bg);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1; /* Ensure content is above any potential background patterns */
+        }
+
+        .winners-list-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-blue);
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .winners-list-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-red), var(--accent-orange));
+            border-radius: 2px;
+        }
+
+        .winner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .winner-card {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Align text within card */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .winner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .winner-card::before {
+            content: '\2728'; /* Sparkle emoji or icon */
+            font-size: 6em;
+            color: rgba(255, 215, 0, 0.1); /* Gold color, very transparent */
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            transform: rotate(-20deg);
+            z-index: 0;
+        }
+
+        .winner-details {
+            position: relative; /* Ensure details are above pseudo-element */
+            z-index: 1;
+        }
+
+        .winner-details h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-dark-blue);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .winner-details p {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .winner-details .amount {
+            font-weight: 700;
+            color: var(--button-green);
+            font-size: 1.4em;
+        }
+
+        .winner-details .lottery-name {
+            font-style: italic;
+            color: var(--secondary-blue);
+        }
+
+        .winner-details .date {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .read-story-button {
+            display: inline-block;
+            background-color: var(--secondary-blue);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-story-button:hover {
+            background-color: var(--primary-dark-blue);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--secondary-blue);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: none; /* Hidden by default */
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Call to Action (Same as previous design) */
+        .sticky-cta {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-dark-blue);
+            color: var(--text-light);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        .sticky-cta p {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+
+        .sticky-cta .button {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            box-shadow: none;
+            background-color: var(--button-green); /* Ensure button color is defined */
+            color: var(--text-light);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .sticky-cta .button:hover {
+            background-color: var(--button-green-hover);
+        }
+
+        /* Footer (Same as previous design) */
+        footer {
+            background-color: #111;
+            color: #bbb;
+            padding: 30px 20px;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer .disclaimer {
+            font-size: 0.8em;
+            color: #888;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 20px;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .winners-hero {
+                padding: 60px 15px;
+            }
+            .winners-hero h1 {
+                font-size: 3em;
+            }
+            .winners-hero p {
+                font-size: 1.2em;
+            }
+            .winners-list-section {
+                padding: 40px 15px;
+            }
+            .winners-list-section h2 {
+                font-size: 2.2em;
+            }
+            .winner-grid {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+            .sticky-cta {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .sticky-cta p {
+                margin-right: 0;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .sticky-cta .button {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <img src="https://www.lotteryoffice.com.au/assets/icons/tlo-logo-white-header.png" alt="The Lottery Office Logo"/>
+            Facebook Users Reward Program
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/Check-Status"><i class="fas fa-user-plus"></i> Check Application</a></li>
+                <li><a href="/Login/"><i class="fas fa-sign-in-alt"></i> Log in</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="winners-hero">
+            <!-- <h1>Our Wall of Winners</h1> -->
+            <p>Join the growing list of lucky players who have turned their dreams into reality with The Lottery Office. Could you be next?</p>
+        </section>
+
+        <section class="winners-list-section">
+            <h2>Recent Big Winners - USA Citizens</h2>
+
+            <div class="winner-grid" id="all-winners-container">
+                </div>
+
+            <div class="loading-spinner" id="loading-spinner"></div>
+            <a href="#" class="read-story-button" id="view-more-btn" style="margin-top: 50px;">View More Winners</a>
+        </section>
+    </main>
+
+    <div class="sticky-cta">
+        <p>Feeling inspired? Your turn to win!</p>
+        <a href="/index.html" class="button">Play Now!</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Facebook Users Reward Program. All rights reserved.</p>
+        <p class="disclaimer">
+            Lottery winnings are matched to the overseas lottery. Terms and conditions apply.
+            Please play responsibly. Gambling Helpline: 1800 858 858.
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartCountElement = document.getElementById('header-cart-count');
+            const initialCartItems = 0;
+            if (cartCountElement) {
+                if (initialCartItems > 0) {
+                    cartCountElement.textContent = initialCartItems;
+                    cartCountElement.style.display = 'inline-block';
+                } else {
+                    cartCountElement.style.display = 'none';
+                }
+            }
+
+            function getRandomDate(start, end) {
+                const date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+
+            function createWinnerCard(winner) {
+                const card = document.createElement('div');
+                card.classList.add('winner-card');
+                card.innerHTML = `
+                    <div class="winner-details">
+                        <h3>${winner.name}</h3>
+                        <p>Matched <strong>${winner.amount}</strong> on <span class="lottery-name">${winner.lottery}</span></p>
+                        <p class="date">Draw Date: ${winner.date}</p>
+                        <p><strong>Claim Status:</strong> ${winner.claimStatus}</p>
+                        <a href="${winner.storyLink}" class="read-story-button">Read ${winner.firstName}'s Story</a>
+                    </div>
+                `;
+                return card;
+            }
+
+            function getWinnerUniqueKey(winner) {
+                return `${winner.name}-${winner.lottery}-${winner.amount}-${winner.date}`;
+            }
+
+            const firstNames = ['James', 'Maria', 'David', 'Sarah', 'Michael', 'Jessica', 'Christopher', 'Emily', 'Daniel', 'Olivia', 'William', 'Sophia', 'Ethan', 'Isabella', 'Alexander', 'Mia', 'Jacob', 'Charlotte', 'Benjamin', 'Amelia', 'Liam', 'Ava', 'Noah', 'Harper', 'Elijah', 'Evelyn', 'Lucas', 'Abigail', 'Mason', 'Elizabeth', 'Logan', 'Sofia', 'Jackson', 'Ella', 'Sebastian', 'Grace', 'Aiden', 'Chloe', 'Matthew', 'Victoria', 'Samuel', 'Natalie', 'Joseph', 'Hannah', 'Henry', 'Lily', 'Gabriel', 'Addison', 'Anthony', 'Layla', 'Julian', 'Zoe', 'Owen', 'Nora', 'Dylan', 'Savannah', 'Carter', 'Brooklyn', 'Luke', 'Scarlett', 'Nathan', 'Lillian', 'Andrew', 'Leah', 'Joshua', 'Audrey', 'Caleb', 'Bella', 'Ryan', 'Skylar', 'Leo', 'Lucy', 'Connor', 'Paisley', 'Isaac', 'Ariana', 'Jayden', 'Valentina', 'Adrian', 'Ruby', 'Stella', 'Aurora', 'Grayson', 'Kennedy', 'Charles', 'Penelope', 'Thomas', 'Hazel', 'Robert', 'Violet', 'Hunter', 'Luna', 'Jack', 'Camila', 'Jordan', 'Maya', 'John', 'Jane', 'Paul', 'Susan', 'George', 'Nancy', 'Frank', 'Linda', 'Kevin', 'Betty'];
+            const lastInitials = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.', 'G.', 'H.', 'I.', 'J.', 'K.', 'L.', 'M.', 'N.', 'O.', 'P.', 'Q.', 'R.', 'S.', 'T.', 'U.', 'V.', 'W.', 'X.', 'Y.', 'Z.'];
+            const cities = ['New York, NY', 'Los Angeles, CA', 'Houston, TX', 'Chicago, IL', 'Phoenix, AZ', 'Philadelphia, PA', 'San Antonio, TX', 'San Diego, CA', 'Dallas, TX', 'San Jose, CA', 'Austin, TX', 'Jacksonville, FL', 'Fort Worth, TX', 'Columbus, OH', 'Charlotte, NC', 'San Francisco, CA', 'Indianapolis, IN', 'Seattle, WA', 'Denver, CO', 'Washington, DC', 'Boston, MA', 'Detroit, MI', 'Nashville, TN', 'Portland, OR', 'Las Vegas, NV', 'Milwaukee, WI', 'Albuquerque, NM', 'Tucson, AZ', 'Fresno, CA', 'Sacramento, CA', 'Kansas City, MO', 'Long Beach, CA', 'Mesa, AZ', 'Virginia Beach, VA', 'Atlanta, GA', 'Colorado Springs, CO', 'Omaha, NE', 'Raleigh, NC', 'Miami, FL', 'Oakland, CA', 'Minneapolis, MN', 'Cleveland, OH', 'New Orleans, LA', 'Orlando, FL', 'St. Louis, MO', 'Pittsburgh, PA', 'Cincinnati, OH', 'Kansas City, KS', 'Anaheim, CA', 'Tampa, FL'];
+            const lotteries = ['Mega Millions', 'Powerball', 'Lotto America', 'Cash4Life', 'Lucky for Life', 'EuroMillions', 'EuroJackpot', 'Oz Lotto', 'Set For Life', 'Monday & Wednesday Lotto', 'Saturday Lotto', 'SuperEnalotto', 'German Lotto'];
+            // Updated amounts array with a minimum of $50,000
+            const amounts = ['$5,000,000', '$1,000,000', '$500,000', '$250,000', '$100,000', '$50,000'];
+            const claimStatuses = ['Claimed', 'Processing', 'Verified'];
+
+            const startDate = new Date(2023, 0, 1);
+            const endDate = new Date();
+
+            const targetCount = 100; // Target number of unique winners
+
+            const allWinnersData = [];
+            const seenKeys = new Set();
+
+            // Define the specific Mory Maokhamphiou winner
+            const moryWinner = {
+                id: 'mory-maokhamphiou-ri', // Unique ID for Mory
+                name: 'Mory Maokhamphiou',
+                from: 'Woonsocket, RI', // New 'from' field
+                amount: `US $250,000`, // A specific amount for Mory
+                lottery: 'Mega Millions', // A specific lottery for Mory
+                date: 'June 2, 2024', // Use current date for Mory
+                claimStatus: 'Verified', // Claim status for Mory
+                storyLink: '#winner-story-mory',
+                firstName: 'Mory'
+            };
+            const moryKey = getWinnerUniqueKey(moryWinner); // Get unique key for Mory
+
+            // Generate initial random winners (more than target to ensure enough unique ones)
+            const temporaryGeneratedWinners = [];
+            for (let i = 0; i < targetCount * 2; i++) { // Generate double the target to ensure enough variety
+                const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+                const randomLastInitial = lastInitials[Math.floor(Math.random() * lastInitials.length)];
+                const randomCity = cities[Math.floor(Math.random() * cities.length)];
+                const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+                const randomLottery = lotteries[Math.floor(Math.random() * lotteries.length)];
+                const randomDate = getRandomDate(startDate, endDate);
+                const randomClaimStatus = claimStatuses[Math.floor(Math.random() * claimStatuses.length)];
+
+                const tempWinner = {
+                    name: `${randomFirstName} ${randomLastInitial} from ${randomCity}`,
+                    amount: `US ${randomAmount}`,
+                    lottery: randomLottery,
+                    date: randomDate,
+                    claimStatus: randomClaimStatus,
+                    storyLink: `#winner-story-temp`,
+                    firstName: randomFirstName
+                };
+                const tempKey = getWinnerUniqueKey(tempWinner);
+
+                // Add to temporary list if not a duplicate and not conflicting with Mory's key
+                if (!seenKeys.has(tempKey) && tempKey !== moryKey) {
+                    seenKeys.add(tempKey);
+                    temporaryGeneratedWinners.push(tempWinner);
+                }
+            }
+
+            // Ensure Mory's winner data is inserted at the 5th position (index 4)
+            // If there aren't enough generated winners to fill the first 4 spots,
+            // Mory will be placed where possible, and then padded.
+
+            // First, add a few placeholder or random winners before Mory
+            for (let i = 0; i < Math.min(4, temporaryGeneratedWinners.length); i++) {
+                allWinnersData.push(temporaryGeneratedWinners[i]);
+            }
+
+            // Insert Mory at the fifth position (index 4)
+            allWinnersData.splice(4, 0, moryWinner);
+
+            // Add the rest of the generated winners
+            for (let i = allWinnersData.length - 1; i < temporaryGeneratedWinners.length; i++) {
+                 // Check if the current winner to be added is Mory. If it is, skip it because Mory is already added.
+                 if (getWinnerUniqueKey(temporaryGeneratedWinners[i]) === moryKey) {
+                     continue;
+                 }
+                allWinnersData.push(temporaryGeneratedWinners[i]);
+            }
+
+            // Ensure the total number of winners is within the targetCount
+            if (allWinnersData.length > targetCount) {
+                allWinnersData.splice(targetCount);
+            } else if (allWinnersData.length < targetCount) {
+                console.warn(`Could only generate ${allWinnersData.length} unique winners out of ${targetCount} requested.`);
+            }
+
+            // Re-index all winners to ensure sequential IDs and correct story links
+            allWinnersData.forEach((winner, index) => {
+                winner.id = index + 1;
+                // Only update storyLink if it's not Mory's custom link or if it's a generic temp link
+                if (winner.storyLink === '#winner-story-temp' || winner.storyLink === `#winner-story-${winner.id}` || winner.id === 5) {
+                    // For the 5th winner (Mory), use the specific Mory story link
+                    if (index === 4) {
+                        winner.storyLink = '#winner-story-mory'; // Fixed link for Mory
+                    } else {
+                        winner.storyLink = `#winner-story-${winner.id}`;
+                    }
+                }
+            });
+
+
+            const winnersPerPage = 10;
+            let currentWinnersDisplayed = 0;
+
+            const allWinnersContainer = document.getElementById('all-winners-container');
+            const viewMoreBtn = document.getElementById('view-more-btn');
+            const loadingSpinner = document.getElementById('loading-spinner');
+
+            function loadWinners() {
+                loadingSpinner.style.display = 'block';
+                viewMoreBtn.style.display = 'none';
+
+                setTimeout(() => {
+                    const startIndex = currentWinnersDisplayed;
+                    const endIndex = Math.min(startIndex + winnersPerPage, allWinnersData.length);
+                    const fragment = document.createDocumentFragment();
+
+                    if (startIndex >= allWinnersData.length) {
+                        loadingSpinner.style.display = 'none';
+                        viewMoreBtn.style.display = 'none';
+                        return; // No more winners to load
+                    }
+
+                    for (let i = startIndex; i < endIndex; i++) {
+                        // Special handling for Mory's name and "from" data
+                        const winnerToDisplay = { ...allWinnersData[i] }; // Create a copy
+                        if (i === 4 && winnerToDisplay.firstName === 'Mory') { // Check specifically for Mory at the 5th spot
+                            winnerToDisplay.name = `${winnerToDisplay.name}`; // Keep just the name as per request
+                            // If you want "From: Woonsocket Rhode Island" on a separate line or specific format
+                            // you might need to adjust the createWinnerCard function or add a new field.
+                            // For now, I'm just putting it in the name.
+                            winnerToDisplay.name = `Mory Maokhamphiou<br>From: Woonsocket Rhode Island`;
+                            winnerToDisplay.firstName = 'Mory'; // Ensure firstName is Mory for the "Read Mory's Story" button
+                        }
+                         fragment.appendChild(createWinnerCard(winnerToDisplay));
+                    }
+                    allWinnersContainer.appendChild(fragment);
+                    currentWinnersDisplayed = endIndex;
+
+                    loadingSpinner.style.display = 'none';
+
+                    if (currentWinnersDisplayed < allWinnersData.length) {
+                        viewMoreBtn.style.display = 'inline-block';
+                    } else {
+                        viewMoreBtn.style.display = 'none';
+                    }
+                }, 500);
+            }
+
+            loadWinners(); // Initial load
+
+            viewMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                loadWinners();
+            });
+        });
+    </script>
+</body>
+</html>
